@@ -11,4 +11,4 @@ automation basics documentation
    :maxdepth: 2
    :caption: Contents:
 
-   ./api/modules
+   modules
