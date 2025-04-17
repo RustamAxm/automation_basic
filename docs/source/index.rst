@@ -12,3 +12,6 @@ automation basics documentation
    :caption: Contents:
 
    modules
+   tutorials/uv
+   tutorials/ruff
+   tutorials/pytest
