@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    automation_basics.simple_functions
+   automation_basics.test_demo
 
 Module contents
 ---------------
