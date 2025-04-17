@@ -32,5 +32,10 @@ automation_basics/test_demo/test_demo.py::test_randon val=0.5140455188138412
 PASSED
 automation_basics/test_demo/test_demo.py::test_randon_false val=0.33228701646396275
 PASSED
+(automation-basic) rustam@rustam-zenbook:~/Documents/automation_basic$ ll test-results/
+total 12
+drwxrwxr-x  2 rustam rustam 4096 Apr 17 18:28 ./
+drwxrwxr-x 11 rustam rustam 4096 Apr 17 18:28 ../
+-rw-rw-r--  1 rustam rustam  424 Apr 17 18:28 2025-04-17_s1744903701.xml
 
 ```
