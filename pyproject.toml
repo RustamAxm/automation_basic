@@ -8,7 +8,7 @@ dependencies = [
     "numpy>=2.2.4",
     "poethepoet>=0.33.1",
     "sphinx-automodapi>=0.18.0",
-    "sphinx-book-theme>=1.1.4",
+    "sphinx-rtd-theme>=3.0.2",
     "sphinx>=8.2.3",
     "sphinxcontrib-bibtex>=2.6.3",
 ]
