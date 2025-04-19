@@ -24,6 +24,7 @@ class Serializer:
     def serialize(self):
         """
         Сериализация
+
         :param vals:
         :return:
         """
@@ -34,6 +35,7 @@ class Serializer:
     def deserialize(self, a_bytes):
         """
         Десериализация
+
         :param a_bytes:
         :return:
         """

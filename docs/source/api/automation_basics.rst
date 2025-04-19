@@ -7,6 +7,7 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   automation_basics.serialize
    automation_basics.simple_functions
    automation_basics.test_demo
 
