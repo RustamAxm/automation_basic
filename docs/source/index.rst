@@ -14,4 +14,5 @@ automation basics documentation
    tutorials/uv
    tutorials/ruff
    tutorials/pytest
+   tutorials/docker
    modules
