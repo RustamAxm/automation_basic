@@ -23,6 +23,13 @@ test-demo.shell = "pytest -vs --junitxml=test-results/$(date '+%F_s%s').xml auto
 [project.scripts]
 simple = "automation_basics.simple_functions.main:main"
 
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-vvs"
+testpaths = [
+    "automation_basics/test_demo",
+]
+
 [tool.ruff.lint]
 select = [
     # pycodestyle

@@ -39,3 +39,17 @@ ________________________________________
     drwxrwxr-x  2 rustam rustam 4096 Apr 17 18:28 ./
     drwxrwxr-x 11 rustam rustam 4096 Apr 17 18:28 ../
     -rw-rw-r--  1 rustam rustam  424 Apr 17 18:28 2025-04-17_s1744903701.xml
+
+Опции для работы и конфигурации
+_________________________________
+
+Для дополнительных опций `можно добавлять в томл <https://docs.pytest.org/en/stable/reference/customize.html>`_
+
+.. code-block::
+
+    [tool.pytest.ini_options]
+    minversion = "6.0"
+    addopts = "-vvs"
+    testpaths = [
+        "automation_basics/test_demo",
+    ]
