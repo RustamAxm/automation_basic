@@ -53,3 +53,5 @@ _________________________________
     testpaths = [
         "automation_basics/test_demo",
     ]
+
+`Контроль ошибок и предупреждений <https://docs.pytest.org/en/stable/how-to/capture-warnings.html>`_

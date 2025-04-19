@@ -29,6 +29,10 @@ addopts = "-vvs"
 testpaths = [
     "automation_basics/test_demo",
 ]
+filterwarnings = [
+    "error",
+    "ignore::UserWarning",
+]
 
 [tool.ruff.lint]
 select = [
