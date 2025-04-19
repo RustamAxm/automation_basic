@@ -15,4 +15,5 @@ automation basics documentation
    tutorials/ruff
    tutorials/pytest
    tutorials/docker
+   tutorials/publish
    modules
