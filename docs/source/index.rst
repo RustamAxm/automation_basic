@@ -11,7 +11,7 @@ automation basics documentation
    :maxdepth: 2
    :caption: Contents:
 
-   modules
    tutorials/uv
    tutorials/ruff
    tutorials/pytest
+   modules
