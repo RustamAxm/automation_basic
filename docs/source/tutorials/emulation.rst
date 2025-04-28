@@ -30,6 +30,7 @@
     rustam@rustam-zenbook:~$ cat < /tmp/ttyV0
     test com
 
+
 Пример кода на Python
 _______________________
 

@@ -17,4 +17,5 @@ automation basics documentation
    tutorials/docker
    tutorials/publish
    tutorials/emulation
+   tutorials/ctypes
    modules

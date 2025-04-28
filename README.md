@@ -17,3 +17,27 @@ uv run poe html
 Далее открываем в браузере [точку входа](docs/source/index.rst)
 
 ![](docs/images/main-index.png)
+
+## Генерация pdf файла
+
+```bash 
+uv run poe simplepdf
+```
+все сгенерится в папке
+```bash
+(automation-basic) rustam@rustam-zenbook:~/Documents/automation_basic$ tree -L 2  docs/build/
+docs/build/
+├── doctrees
+│   ├── api
+│   ├── environment.pickle
+│   ├── index.doctree
+│   ├── modules.doctree
+│   └── tutorials
+└── simplepdf
+    ├── automation_basics.pdf
+    ├── index.html
+    ├── objects.inv
+    └── _static
+
+```
+

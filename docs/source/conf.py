@@ -24,8 +24,13 @@ extensions = [
     "sphinx_automodapi.automodapi",
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
+    "sphinx_simplepdf",
 ]
 autoclass_content = 'both'
+simplepdf_vars = {
+    'primary': '#333333',
+    'links': '#FF3333',
+}
 
 templates_path = ['_templates']
 exclude_patterns = []
