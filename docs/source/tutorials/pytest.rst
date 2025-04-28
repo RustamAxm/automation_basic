@@ -55,3 +55,11 @@ Pytest
     ]
 
 `Контроль ошибок и предупреждений <https://docs.pytest.org/en/stable/how-to/capture-warnings.html>`_
+
+Проекты с unit тестами на gtest
+---------------------------------
+Для c/cpp юнит тестов есть пару примеров для систем сборок
+
+`meson <https://github.com/RustamAxm/meson-test-project>`_
+
+`cmake <https://github.com/RustamAxm/trygtest>`_
