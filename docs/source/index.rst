@@ -16,4 +16,5 @@ automation basics documentation
    tutorials/pytest
    tutorials/docker
    tutorials/publish
+   tutorials/emulation
    modules
