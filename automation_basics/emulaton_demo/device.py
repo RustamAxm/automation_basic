@@ -1,5 +1,5 @@
-import serial
 import numpy as np
+import serial
 from loguru import logger
 
 from automation_basics.arduino_like_api.arduino_device import s_struct

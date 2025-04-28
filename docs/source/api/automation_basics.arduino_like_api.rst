@@ -1,6 +1,14 @@
 automation\_basics.arduino\_like\_api package
 =============================================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   automation_basics.arduino_like_api.test
+
 Submodules
 ----------
 

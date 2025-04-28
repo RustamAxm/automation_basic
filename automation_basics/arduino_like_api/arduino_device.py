@@ -1,5 +1,5 @@
-import serial
 import numpy as np
+import serial
 from loguru import logger
 
 from automation_basics.common.helpers import struct_to_dict
@@ -15,8 +15,8 @@ class ArduinoAPI:
     """
     demo API for serial device communication
     """
-    def __init__(self, com, baud_rate):
-        self.dev = serial.Serial(com, baudrate=baud_rate)
+    def __init__(self, dev):
+        self.dev = dev
 
     def get_a0(self):
         """
@@ -34,7 +34,7 @@ class ArduinoAPI:
         """
         send to device commands
         """
-        logger.debug(f'send to device')
+        logger.debug('send to device')
         tmp = np.zeros(1, dtype=s_struct)
         tmp['header'] = 10
         tmp['cmd'] = command
@@ -47,7 +47,8 @@ class ArduinoAPI:
 
 
 def main():
-    dev = ArduinoAPI('/tmp/ttyV0', baud_rate=9600)
+    com_dev = serial.Serial('/tmp/ttyV0', baudrate=9600)
+    dev = ArduinoAPI(com_dev)
     logger.info(f'A0 data = {dev.get_a0()}')
     logger.info(f'A0 data = {dev.get_a1()}')
 

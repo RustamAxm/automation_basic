@@ -52,6 +52,7 @@ select = [
     # isort
     "I",
 ]
+ignore = ['UP012']
 
 [tool.hatch.build.targets.wheel]
 packages = ["automation_basics"]

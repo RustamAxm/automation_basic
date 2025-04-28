@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def python_type(val):
     to_check = str(type(val))
     if 'int' in to_check:
