@@ -21,7 +21,7 @@ uv run poe html
 ## Генерация pdf файла
 
 ```bash 
-uv run poe simplepdf
+uv run poe pdf
 ```
 все сгенерится в папке
 ```bash

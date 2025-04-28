@@ -2,6 +2,8 @@ UV крутой менеджер пакетов
 ============================
 *  `ссылка на проект <https://docs.astral.sh>`_
 
+Основная часть
+----------------
 Установка в ubuntu 24.04
 
 .. code-block::
@@ -32,8 +34,8 @@ UV крутой менеджер пакетов
     test-demo.shell = "pytest -vs --junitxml=test-results/$(date '+%F_s%s').xml automation_basics/test_demo/ "
 
 
-Additional
---------------
+Дополнительно
+---------------
 
     * `pytest <https://docs.pytest.org/en/stable/index.html>`_
     * `poethepoet <https://poethepoet.natn.io/>`_

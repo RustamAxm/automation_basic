@@ -27,5 +27,6 @@ RUFF linter как добавить в проект
         # isort
         "I",
     ]
+    ignore = ['UP012']
 
 
