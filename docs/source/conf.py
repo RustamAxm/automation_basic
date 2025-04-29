@@ -28,13 +28,13 @@ extensions = [
 ]
 autoclass_content = 'both'
 simplepdf_vars = {
-    'primary': '#FA2323',
+    'primary': '#1e94ff',
     'secondary': '#379683',
     'cover': '#ffffff',
     'white': '#ffffff',
-    'links': 'FA2323',
+    'links': '#1e94ff',
     'cover-bg': 'url(cover-bg.jpg) no-repeat center',
-    'cover-overlay': 'rgba(250, 35, 35, 0.5)',
+    'cover-overlay': '#1e94ff',
     'top-left-content': 'counter(page)',
     'bottom-center-content': '"Custom footer content"',
 }
