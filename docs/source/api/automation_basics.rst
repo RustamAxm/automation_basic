@@ -13,6 +13,7 @@ Subpackages
    automation_basics.serialize
    automation_basics.simple_functions
    automation_basics.test_demo
+   automation_basics.zmq_demo
 
 Module contents
 ---------------
