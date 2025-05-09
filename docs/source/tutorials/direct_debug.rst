@@ -5,7 +5,7 @@ OpenOCD
 ---------
 Первый пример с прямым управлением значением регистров.
 Пример кода для f103 с изменением периода мигания светодиода.
-`Ссылка на репозиторий с примером <https://github.com/RustamAxm/arduino_based_projects/tree/main/openocd_stm_blink/OpenOCD_test>`_
+`Ссылка на репозиторий с примером <https://github.com/RustamAxm/arduino_based_projects/tree/main/openocd_stm_blink>`_
 
 Segger J-Link
 ----------------
