@@ -20,11 +20,10 @@ Xilinx
 Пример  DLC оригинала но есть куча китайских клонов
 `ссылка <https://www.chipdip.ru/product/hw-usb-ii-g>`_
 
+Удобно зашивать через `Vivado Lab <https://docs.amd.com/r/en-US/ug908-vivado-programming-debugging/Introduction>`_.
+Есть поддержка скриптов из-под IDE
+
 Можно пользоваться и `ftdi <https://docs.amd.com/r/2022.1-English/ug908-vivado-programming-debugging/Programming-FTDI-Devices-for-Vivado-Hardware-Manager-Support>`_
 
-Пакет для использования `ссылка <https://pypi.org/project/pyftdi/>`_
-Предварительно нужно правильно поставить `драйвера <https://ftdichip.com/drivers/d2xx-drivers/>`_
-
-Удобно зашивать через `Vivado Lab <https://docs.amd.com/r/en-US/ug908-vivado-programming-debugging/Introduction>`_
-
-Есть поддержка скриптов из-под IDE
+Пакет для использования `ссылка <https://pypi.org/project/pyftdi/>`_.
+Предварительно нужно правильно поставить `драйвера <https://ftdichip.com/drivers/d2xx-drivers/>`_.
