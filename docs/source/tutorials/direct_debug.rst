@@ -7,6 +7,8 @@ OpenOCD
 Пример кода для f103 с изменением периода мигания светодиода.
 `Ссылка на репозиторий с примером <https://github.com/RustamAxm/arduino_based_projects/tree/main/openocd_stm_blink>`_
 
+Для FPGA есть `возможность закинуть bitstream <https://www.kosagi.com/w/index.php?title=FPGA_getting_started>`_.
+
 Segger J-Link
 ----------------
 
