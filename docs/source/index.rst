@@ -19,6 +19,7 @@ automation basics documentation
    tutorials/emulation
    tutorials/generative_api
    tutorials/remote
+   tutorials/direct_debug
    tutorials/systemd
    tutorials/ctypes
    modules
