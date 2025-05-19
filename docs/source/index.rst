@@ -23,4 +23,5 @@ automation basics documentation
    tutorials/systemd
    tutorials/ctypes
    tutorials/signal_analyze
+   tutorials/git
    modules
