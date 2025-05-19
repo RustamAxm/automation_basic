@@ -22,4 +22,5 @@ automation basics documentation
    tutorials/direct_debug
    tutorials/systemd
    tutorials/ctypes
+   tutorials/signal_analyze
    modules
