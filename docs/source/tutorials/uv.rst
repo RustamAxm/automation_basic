@@ -33,6 +33,16 @@ UV крутой менеджер пакетов
     api-rst.shell = "rm -fr docs/source/api && uv run sphinx-apidoc -o docs/source/api automation_basics/"
     test-demo.shell = "pytest -vs --junitxml=test-results/$(date '+%F_s%s').xml automation_basics/test_demo/ "
 
+зависимости из git репозиториев
+
+.. code-block::
+
+    dependencies = [
+        "package-name>=0.0.0",
+    ]
+
+    [tool.uv.sources]
+    package-name = { git = "link to package" }
 
 Дополнительно
 ---------------
