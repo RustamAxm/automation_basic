@@ -20,7 +20,7 @@ automation basics documentation
    tutorials/generative_api
    tutorials/remote
    tutorials/direct_debug
-   tutorials/systemd
+   tutorials/linux
    tutorials/ctypes
    tutorials/signal_analyze
    tutorials/git
