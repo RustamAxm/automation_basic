@@ -49,3 +49,5 @@ UV крутой менеджер пакетов
 
     * `pytest <https://docs.pytest.org/en/stable/index.html>`_
     * `poethepoet <https://poethepoet.natn.io/>`_
+    * `dynamic version for package <https://pydevtools.com/handbook/how-to/how-to-add-dynamic-versioning-to-uv-projects/>`_
+    * `pretty progress bar <https://www.geeksforgeeks.org/progress-bars-in-python/>`_
