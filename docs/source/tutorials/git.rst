@@ -54,3 +54,27 @@ git заметки
     git reset --hard HEAD~3
     git pull
     git cherry-pick tmp
+
+tags
+-------
+
+Создание тега 
+
+.. code-block::
+
+   git tag v0.1.0
+
+Отправка всех тегов в remote
+
+.. code-block::
+
+   git push --tags 
+
+
+Отправка одного тега 
+
+.. code-block::
+
+   git push <remote-name> tag <tag>
+
+
