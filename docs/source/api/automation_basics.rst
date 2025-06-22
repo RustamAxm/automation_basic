@@ -9,6 +9,7 @@ Subpackages
 
    automation_basics.arduino_like_api
    automation_basics.common
+   automation_basics.demo_ftdi
    automation_basics.emulaton_demo
    automation_basics.generative_api
    automation_basics.serialize
