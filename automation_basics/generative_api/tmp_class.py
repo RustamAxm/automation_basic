@@ -30,7 +30,7 @@ class TempGen:
         def func(*args):
             assert len(args) == len(item['args'])
             payload = b''
-            for v1, v2 in zip(args, item['args']):
+            for v1, v2 in zip(args, item['args'], strict=False):
                 payload += get_types(v2['type'])(v1)
             self.dev.write(payload)
             ret = self.dev.read(item['ret'][0]['size'])
