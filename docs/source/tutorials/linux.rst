@@ -46,7 +46,28 @@ deb пакеты
 
 Прокинуть пакеты от одного ip `интерфейса в другой <https://github.com/RustamAxm/sh_scripts/blob/main/route_ip_to_ip/run_ip_to_ip.sh>`_
 
+Namespace ip 
+---------------
 
+.. code-block::
+
+        ip link
+
+        sudo ip netns add ns1
+
+        sudo ip link set eth1 netns ns1
+
+        sudo ip netns exec ns1 ip link set eth1 up
+
+        sudo ip link set eth0 up
+
+        sudo ip addr add 10.0.0.1/24 dev eth0
+
+        sudo ip netns exec ns1 ip addr add 10.0.0.2/24 dev eth1
+
+        sudo ip netns exec ns1 ping 10.0.0.1
+
+        
 Утилита iperf
 ---------------
 
