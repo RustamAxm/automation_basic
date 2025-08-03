@@ -77,4 +77,50 @@ tags
 
    git push <remote-name> tag <tag>
 
+Pre-commit
+------------
+
+Удобно при каждом коммите проверять состояние репозитория. Заполняем .pre-commit-config.yaml
+
+.. code-block::
+
+    repos:
+    - repo: local
+      hooks:
+        - id: check-json
+          name: json check
+          entry: "uv run check-json"
+          language: system
+          files: .json
+
+        - id: check-yaml
+          name: yaml check
+          entry: "uv run check-yaml"
+          language: system
+          files: .yaml
+
+        - id: check-toml
+          name: toml check
+          entry: "uv run check-toml"
+          language: system
+          files: .toml
+
+        - id: check-xml
+          name: xml check
+          entry: "uv run check-xml"
+          language: system
+          files: .xml
+
+        - id: linter
+          name: Linter check
+          entry: "uv run poe linter"
+          language: system
+          types: [ python ]
+          pass_filenames: false
+
+Настраиваем в проекте
+
+.. code-block::
+
+    uv run pre-commit install
 

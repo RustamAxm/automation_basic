@@ -1,6 +1,11 @@
 automation\_basics.generative\_api package
 ==========================================
 
+.. automodule:: automation_basics.generative_api
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 Subpackages
 -----------
 
@@ -25,14 +30,6 @@ automation\_basics.generative\_api.tmp\_class module
 ----------------------------------------------------
 
 .. automodule:: automation_basics.generative_api.tmp_class
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-Module contents
----------------
-
-.. automodule:: automation_basics.generative_api
    :members:
    :show-inheritance:
    :undoc-members:

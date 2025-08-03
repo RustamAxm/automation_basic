@@ -1,6 +1,11 @@
 automation\_basics.emulaton\_demo package
 =========================================
 
+.. automodule:: automation_basics.emulaton_demo
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 Submodules
 ----------
 
@@ -16,14 +21,6 @@ automation\_basics.emulaton\_demo.main module
 ---------------------------------------------
 
 .. automodule:: automation_basics.emulaton_demo.main
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
-Module contents
----------------
-
-.. automodule:: automation_basics.emulaton_demo
    :members:
    :show-inheritance:
    :undoc-members:
