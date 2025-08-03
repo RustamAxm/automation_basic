@@ -7,11 +7,12 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 import os
 import sys
+from datetime import datetime
 
 sys.path.insert(0, os.path.abspath('../..'))
 
 project = 'automation_basics'
-copyright = '2025, Rustam Akhmadullin'
+copyright = f'{datetime.now().year}, Rustam Akhmadullin'
 author = 'Rustam Akhmadullin'
 release = '0.1.0'
 
