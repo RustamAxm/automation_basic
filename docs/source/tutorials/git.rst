@@ -124,3 +124,15 @@ Pre-commit
 
     uv run pre-commit install
 
+Далее при коммите вызываются проверки
+
+.. code-block::
+
+    $ git commit -m 'fix rst '
+    json check...........................................(no files to check)Skipped
+    yaml check...........................................(no files to check)Skipped
+    toml check...............................................................Passed
+    xml check............................................(no files to check)Skipped
+    Linter check.............................................................Passed
+
+
