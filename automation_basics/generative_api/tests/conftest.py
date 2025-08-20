@@ -1,8 +1,7 @@
 import yaml
-
-from automation_basics.generative_api.gen.out import Temp
 from pytest import fixture
 
+from automation_basics.generative_api.gen.out import Temp
 from automation_basics.generative_api.tmp_class import TempGen
 
 

@@ -1,9 +1,10 @@
 
-from loguru import logger
-import ftd2xx
-import time
 import sys
+import time
 from enum import Enum
+
+import ftd2xx
+from loguru import logger
 
 
 # Define the PINNames enum with relevant pins
@@ -90,7 +91,7 @@ def toggle_rxd_pin():
 
     try:
         # Set RXD high
-        for i in range(5):
+        for _ in range(5):
             device.write_pin(PINNames.RXD, True)
             logger.info("RXD is HIGH for 1 second.")
 

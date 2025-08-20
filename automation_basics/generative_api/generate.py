@@ -1,7 +1,6 @@
 """
 Проект для демонстрации генерации api
 """
-import numpy as np
 import yaml
 from loguru import logger
 
