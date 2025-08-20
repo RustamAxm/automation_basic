@@ -135,4 +135,18 @@ Pre-commit
     xml check............................................(no files to check)Skipped
     Linter check.............................................................Passed
 
+Редактироавние коммитов
+------------------------------
+
+Отключаем прекоммит хук
+
+.. code-block::
+
+    uv run pre-commit uninstall
+
+Пример изменения автора коммита
+
+.. code-block::
+
+    git rebase --onto HEAD~29 --exec "git commit --amend --reset-author --no-edit" HEAD~29
 
