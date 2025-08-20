@@ -24,4 +24,5 @@ automation basics documentation
    tutorials/ctypes
    tutorials/signal_analyze
    tutorials/git
+   tutorials/ftdi
    modules
