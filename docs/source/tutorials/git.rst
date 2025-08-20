@@ -1,0 +1,36 @@
+git заметки
+==============
+заметки по гит
+
+База
+-------
+ребейз в интерактивном режиме осносительно себя позволяет перечень коммитов отредактировать
+
+.. code-block::
+
+    git rebase -i HEAD~3
+
+установка нескольких репозиториев для одного проекта
+
+.. code-block::
+
+    git remote -v
+    git remote add <name_for_remote> <link>
+
+Красивый вывод истории
+----------------
+
+Для истории коммитов отредактировать ~/.gitconfig
+
+.. code-block::
+
+    [alias]
+    lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+    lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+    lg = lg1
+
+Пример вывода
+
+.. code-block::
+
+    git lg
