@@ -85,9 +85,13 @@ ignore = ['UP012']
 packages = ["src/automation_basics"]
 
 [build-system]
-requires = ["hatchling", "uv-dynamic-versioning"]
+requires = ["hatchling", "uv-dynamic-versioning", "hatch-build-scripts"]
 build-backend = "hatchling.build"
 
+[[tool.hatch.build.hooks.build-scripts.scripts]]
+commands = [
+    """echo 'hello form prebuild'""",
+]
 
 [tool.hatch.version]
 source = "uv-dynamic-versioning"
