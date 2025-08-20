@@ -34,3 +34,23 @@ git заметки
 .. code-block::
 
     git lg
+
+Конфликты
+------------
+
+Не совпадение коммитов с remote
+
+Создаем временную ветку
+
+.. code-block::
+
+    git checkout -b tmp
+    git switch <prev branch>
+
+Далее ресет на нужное количество коммитов, забираем разницу из удаленного репозитория, далее забираем коммиты которые отличались.
+
+.. code-block::
+
+    git reset --hard HEAD~3
+    git pull
+    git cherry-pick tmp
