@@ -7,7 +7,6 @@ import ftd2xx
 from loguru import logger
 
 
-
 class PINNames(Enum):
     """
     Define the PINNames enum with relevant pins
