@@ -58,6 +58,20 @@ UV крутой менеджер пакетов
 
 Далее откроется интерактивное окно.
 
+Пребилд скрипты
+-------------------
+
+.. code-block::
+
+    [build-system]
+    requires = ["hatchling", "uv-dynamic-versioning", "hatch-build-scripts"]
+    build-backend = "hatchling.build"
+
+    [[tool.hatch.build.hooks.build-scripts.scripts]]
+    commands = [
+        """echo 'hello form prebuild'""",
+    ]
+
 Дополнительно
 ---------------
 
@@ -65,3 +79,4 @@ UV крутой менеджер пакетов
     * `poethepoet <https://poethepoet.natn.io/>`_
     * `dynamic version for package <https://pydevtools.com/handbook/how-to/how-to-add-dynamic-versioning-to-uv-projects/>`_
     * `pretty progress bar <https://www.geeksforgeeks.org/progress-bars-in-python/>`_
+    * `build hook <https://hatch.pypa.io/dev/plugins/build-hook/reference/>`_

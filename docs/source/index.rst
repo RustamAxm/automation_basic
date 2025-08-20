@@ -25,4 +25,5 @@ automation basics documentation
    tutorials/signal_analyze
    tutorials/git
    tutorials/ftdi
+   tutorials/rpi
    modules
