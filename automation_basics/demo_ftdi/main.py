@@ -7,8 +7,23 @@ import ftd2xx
 from loguru import logger
 
 
-# Define the PINNames enum with relevant pins
+
 class PINNames(Enum):
+    """
+    Define the PINNames enum with relevant pins
+
+    .. code-block::
+
+        TXD = 0  # PIN_1 | D0
+        RXD = 1  # PIN_5 | D1
+        RTS = 2  # PIN_3 | D2
+        CTS = 3  # PIN_11| D3
+        DTR = 4  # PIN_2 | D4
+        DSR = 5  # PIN_9 | D5
+        DCD = 6  # PIN_10| D6
+        RI = 7  # PIN_6 | D7
+
+    """
     TXD = 0  # PIN_1 | D0
     RXD = 1  # PIN_5 | D1
     RTS = 2  # PIN_3 | D2
