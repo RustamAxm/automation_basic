@@ -1,7 +1,10 @@
-automation\_basics.serialize.tests namespace
-============================================
+automation\_basics.serialize.tests package
+==========================================
 
-.. py:module:: automation_basics.serialize.tests
+.. automodule:: automation_basics.serialize.tests
+   :members:
+   :show-inheritance:
+   :undoc-members:
 
 Submodules
 ----------

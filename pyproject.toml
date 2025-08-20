@@ -1,5 +1,5 @@
 [project]
-name = "automation-basic"
+name = "automation-basics"
 dynamic = ["version"]
 description = "Add your description here"
 readme = "README.md"
@@ -33,16 +33,16 @@ dev = [
 
 
 [tool.poe.tasks]
-linter.shell = "ruff check automation_basics"
+linter.shell = "ruff check src"
 html.shell = """rm -fr docs/build &&
                 sphinx-build -M html docs/source docs/build"""
 pdf.shell = """rm -fr docs/build &&
                sphinx-build -M simplepdf docs/source docs/build"""
 api-rst.shell = """rm -fr docs/source/api &&
                    sphinx-apidoc --module-first --implicit-namespaces --no-toc --force \
-                   -o docs/source/api automation_basics/"""
-test-demo.shell = """pytest -vs --cov=automation_basics --junitxml=test-results/$(date '+%F_s%s').xml \
-                     automation_basics/test_demo/ """
+                   -o docs/source/api src/automation_basics"""
+test-demo.shell = """pytest -vs --cov=src --junitxml=test-results/$(date '+%F_s%s').xml \
+                     src """
 create-com.shell = "socat -d -d pty,raw,echo=0,link=/tmp/ttyV0 pty,raw,echo=0,link=/tmp/ttyV1"
 pre-commit.shell = "pre-commit install"
 
@@ -53,7 +53,7 @@ simple = "automation_basics.simple_functions.main:main"
 minversion = "6.0"
 addopts = "-vvs"
 testpaths = [
-    "automation_basics/test_demo",
+    "src/automation_basics/test_demo",
 ]
 filterwarnings = [
     "error",
@@ -82,7 +82,7 @@ select = [
 ignore = ['UP012']
 
 [tool.hatch.build.targets.wheel]
-packages = ["automation_basics"]
+packages = ["src/automation_basics"]
 
 [build-system]
 requires = ["hatchling", "uv-dynamic-versioning"]
@@ -93,5 +93,8 @@ build-backend = "hatchling.build"
 source = "uv-dynamic-versioning"
 
 [tool.uv-dynamic-versioning]
+vcs = "git"
+style = "pep440"
+bump = "true"
 fallback-version = "0.0.0"
 

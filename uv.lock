@@ -12,7 +12,7 @@ wheels = [
 ]
 
 [[package]]
-name = "automation-basic"
+name = "automation-basics"
 source = { editable = "." }
 dependencies = [
     { name = "ftd2xx" },

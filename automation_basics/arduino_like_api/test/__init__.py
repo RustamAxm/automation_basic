@@ -1,3 +1,0 @@
-"""
-test part for API
-"""
