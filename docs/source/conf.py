@@ -8,13 +8,14 @@
 import os
 import sys
 from datetime import datetime
+from automation_basics import __version__
 
 sys.path.insert(0, os.path.abspath('../..'))
 
 project = 'automation_basics'
 copyright = f'{datetime.now().year}, Rustam Akhmadullin'
 author = 'Rustam Akhmadullin'
-release = '0.1.0'
+version = __version__
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

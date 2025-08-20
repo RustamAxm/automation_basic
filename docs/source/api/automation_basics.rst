@@ -1,6 +1,11 @@
 automation\_basics package
 ==========================
 
+.. automodule:: automation_basics
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 Subpackages
 -----------
 
@@ -16,11 +21,3 @@ Subpackages
    automation_basics.simple_functions
    automation_basics.test_demo
    automation_basics.zmq_demo
-
-Module contents
----------------
-
-.. automodule:: automation_basics
-   :members:
-   :show-inheritance:
-   :undoc-members:
