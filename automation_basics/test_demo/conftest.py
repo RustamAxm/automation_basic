@@ -8,6 +8,8 @@
 import numpy as np
 from pytest import fixture
 
+from automation_basics.test_demo.client import Client
+
 
 @fixture
 def get_testing_data():
@@ -22,3 +24,8 @@ def get_testing_data():
 @fixture(scope='session', params=[1, 2, 3])
 def get_params(request):
     return request.param
+
+@fixture(scope='session')
+def get_client():
+    cl = Client()
+    return cl
