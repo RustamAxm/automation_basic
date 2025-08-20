@@ -38,3 +38,13 @@
 ------------------------
 
 См. документацию в сабпроекте automation_basics/emulaton_demo
+
+
+i2c пример для stub
+---------------------
+
+* `первый источник <https://stackoverflow.com/questions/63430327/how-can-i-emulate-an-i2c-device-on-linux>`_
+
+* `второй  <https://shawn-maybush.com/building-a-dockerized-i%C2%B2c-development-platform-for-raspberry-pi/>`_
+
+
