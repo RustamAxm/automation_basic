@@ -3,6 +3,55 @@
 В данном отрывке рассмотрим случаи когда нужно взаимодействовать с устройством,
 которое находится на другом хосте различными способами
 
+rest api
+-----------
+Пример как можно завернуть класс с нормальным интерфейсом в api.
+
+Сервер
+
+.. code-block::
+
+    def get_str_to_api_post(device, method):
+        str_ = f"""
+    @router.post("/{device}/{method}")
+    async def {method}(request: Request):
+        try:
+            kwargs_ = await request.json()
+            logger.debug(kwargs_)
+            ret = {device}.{method}(**kwargs_)
+            return {'{'} 'ret': ret {'}'}
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"{'{'}e{'}'}")
+        """
+
+        return str_
+
+клиент
+
+.. code-block::
+
+    def get_client_to_api_post(device, method, args_tr, tmp_d, doc_):
+        docs_q = '"""\n'
+        str_ = f"""
+        def {method}({args_tr}):
+            {docs_q}{doc_}\n        {docs_q}
+            url = f"{'{'}self.base_url{'}'}/api/v1/{device}/{method}"
+            tmp_d = {tmp_d}
+            try:
+                response = requests.post(
+                    url,
+                    data=json.dumps(tmp_d),
+                    headers={'{'}'content-type': 'application/json'{'}'},
+                    timeout=10,
+                    )
+                response.raise_for_status()
+                return response.json()['ret']
+            except requests.exceptions.RequestException as e:
+                raise Exception(f"Ошибка при получении данных: {'{'}e{'}'}")
+        """
+
+        return str_
+
 usb to ip
 -------------
 
