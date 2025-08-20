@@ -3,15 +3,19 @@ name = "automation-basic"
 dynamic = ["version"]
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.13"
 dependencies = [
     "ftd2xx>=1.3.8",
     "loguru>=0.7.3",
     "numpy>=2.2.4",
     "poethepoet>=0.33.1",
     "pyserial>=3.5",
-    "pytest>=8.3.5",
     "pyzmq>=26.4.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
     "ruff>=0.11.6",
     "sphinx-automodapi>=0.18.0",
     "sphinx-rtd-theme>=3.0.2",
@@ -19,6 +23,7 @@ dependencies = [
     "sphinx>=8.2.3",
     "sphinxcontrib-bibtex>=2.6.3",
 ]
+
 
 [tool.poe.tasks]
 html.shell = """rm -fr docs/build &&
@@ -69,6 +74,7 @@ packages = ["automation_basics"]
 [build-system]
 requires = ["hatchling", "uv-dynamic-versioning"]
 build-backend = "hatchling.build"
+
 
 [tool.hatch.version]
 source = "uv-dynamic-versioning"
