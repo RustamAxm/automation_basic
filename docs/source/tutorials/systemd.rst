@@ -18,3 +18,44 @@ deb пакеты
 Полезно когда нужно поднять отладочную сеть.
 `Пример со скриптом <https://github.com/RustamAxm/sh_scripts>`_
 
+Работа с ip
+--------------
+
+установка ip на интерфейс
+
+.. code-block::
+
+    ip a a 192.168.1.1/23 dev eth0
+
+статистика по пакетам
+
+.. code-block::
+
+    ip -s -s  link show wlp0s20f3
+    3: wlp0s20f3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+    link/ether a0:80:69:87:64:2d brd ff:ff:ff:ff:ff:ff
+        RX:  bytes packets errors dropped  missed   mcast
+        1415441992 2010036      0     516       0       0
+        RX errors:  length    crc   frame    fifo overrun
+                         0      0       0       0       0
+        TX:  bytes packets errors dropped carrier collsns
+         238697972  680228      0      41       0       0
+        TX errors: aborted   fifo  window heartbt transns
+                         0      0       0       0      32
+
+
+Прокинуть пакеты от одного ip `интерфейса в другой <https://github.com/RustamAxm/sh_scripts/blob/main/route_ip_to_ip/run_ip_to_ip.sh>`_
+
+
+Утилита iperf
+---------------
+
+Утилита для работы с сетевым трафиком.
+
+Есть несколько версий iperf3 - стандартный кейс, iperf2 - больше фич для udp
+
+Много инструкций в сети, но упомяну что для udp мультикаст нужно открыть разрешение пакетов
+
+.. code-block::
+
+    ip route add 224.0.0.0/4 dev eth0
