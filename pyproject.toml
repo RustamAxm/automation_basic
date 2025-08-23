@@ -23,6 +23,7 @@ dev = [
     "sphinx-simplepdf>=1.6.0",
     "sphinx>=8.2.3",
     "sphinxcontrib-bibtex>=2.6.3",
+    "sphinx-markdown-builder>=0.6.8",
     "pytest-mock>=3.14.1",
     "pytest-cov>=6.2.1",
     "ty>=0.0.1a16",
@@ -33,14 +34,18 @@ dev = [
 
 
 [tool.poe.tasks]
-linter.shell = "ruff check src"
-html.shell = """rm -fr docs/build &&
+linter = "ruff check src"
+html.shell = """rm -fr docs/build/html &&
                 sphinx-build -M html docs/source docs/build"""
-pdf.shell = """rm -fr docs/build &&
+pdf.shell = """rm -fr docs/build/simplepdf &&
                sphinx-build -M simplepdf docs/source docs/build"""
+md.shell = """rm -fr docs/buld/markdown &&
+              sphinx-build -M markdown docs/source docs/build"""
 api-rst.shell = """rm -fr docs/source/api &&
                    sphinx-apidoc --module-first --implicit-namespaces --no-toc --force \
                    -o docs/source/api src/automation_basics"""
+all-docs = ["api-rst", "html", "pdf", "md"]
+
 test-demo.shell = """pytest -vs --cov=src --junitxml=test-results/$(date '+%F_s%s').xml \
                      src """
 create-com.shell = "socat -d -d pty,raw,echo=0,link=/tmp/ttyV0 pty,raw,echo=0,link=/tmp/ttyV1"

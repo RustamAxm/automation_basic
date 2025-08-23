@@ -40,8 +40,10 @@
 См. документацию в сабпроекте automation_basics/emulaton_demo
 
 
-i2c пример для stub
----------------------
+i2c пример для stub и gpiod
+-----------------------------
+
+`репозиторий с примером <https://github.com/RustamAxm/sh_scripts/tree/main/phy_emulator>`_
 
 * `первый источник <https://stackoverflow.com/questions/63430327/how-can-i-emulate-an-i2c-device-on-linux>`_
 
