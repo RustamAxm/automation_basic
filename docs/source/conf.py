@@ -6,8 +6,11 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 import os
+import re
 import sys
 from datetime import datetime
+from distutils.version import LooseVersion
+
 from automation_basics import __version__
 
 sys.path.insert(0, os.path.abspath('../..'))
@@ -52,4 +55,28 @@ language = 'Python'
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
-autodoc_mock_imports = ['smbus3', 'serial', 'RPi', 'ftd2xx']
+def create_versions():
+    import git
+    repo = git.Repo('../..')
+    tmp_tags = []
+    for tag in repo.tags:
+        m = re.search(r'\d+(\.\d+){1,3}', f"{tag}")
+        if m:
+            ver = m[0]
+            tmp_tags.append(ver)
+    tags = sorted(set(tmp_tags), key=LooseVersion)
+    tmp = []
+    root_docs_url = '.'
+    for tag in tags:
+        tmp.append([f"{tag}", f"{root_docs_url}/{tag}/docs/"])
+    return tmp
+
+versions = create_versions()
+html_context = {
+  'current_version' : version,
+  'versions' : create_versions(),
+  'current_language': 'en',
+  'languages': [["en", "link to en"], ["de", "link to de"]]
+}
+
+autodoc_mock_imports = ['smbus3', 'smbus2', 'serial', 'RPi', 'ftd2xx']
