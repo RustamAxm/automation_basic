@@ -6,10 +6,11 @@ class Serializer:
     """
     Простой пример сериализации байти в числа можно внести структуру и ее кастовать
     """
+
     s_struct = np.dtype(
         [
-            ('a', np.uint8),
-            ('b', np.uint32),
+            ("a", np.uint8),
+            ("b", np.uint32),
         ]
     )
 
@@ -18,8 +19,8 @@ class Serializer:
         Простой инит  с заполнением нащей структуры которую можно сипользовать потом
         """
         self.s = np.zeros(1, dtype=self.s_struct)
-        self.s['a'] = a
-        self.s['b'] = b
+        self.s["a"] = a
+        self.s["b"] = b
 
     def serialize(self):
         """

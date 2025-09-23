@@ -21,11 +21,13 @@ def get_testing_data():
     val = np.random.random()
     return val
 
-@fixture(scope='session', params=[1, 2, 3])
+
+@fixture(scope="session", params=[1, 2, 3])
 def get_params(request):
     return request.param
 
-@fixture(scope='session')
+
+@fixture(scope="session")
 def get_client():
     cl = Client()
     return cl

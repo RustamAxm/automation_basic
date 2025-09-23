@@ -31,3 +31,10 @@ repos:
       language: system
       types: [ python ]
       pass_filenames: false
+
+    - id: formatter
+      name: Formatter check
+      entry: "uv run ruff format"
+      language: system
+      types: [ python ]
+

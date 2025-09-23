@@ -4,6 +4,7 @@
 чтобы переиспользовать в дальнейшем.
 
 """
+
 import numpy as np
 
 
@@ -21,5 +22,6 @@ def main():
     val = np.random.random()
     print(val)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()

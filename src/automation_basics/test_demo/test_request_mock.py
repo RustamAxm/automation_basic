@@ -1,5 +1,3 @@
-
-
 def test_get_files(get_client, mocker):
     """
     In real case return Responsive is better than fast.

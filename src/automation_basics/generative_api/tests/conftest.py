@@ -10,16 +10,17 @@ class Dev:
         pass
 
     def read(self, size):
-        return b'{\x00\x00\x00'
+        return b"{\x00\x00\x00"
 
 
-@fixture(scope='session')
+@fixture(scope="session")
 def get_class_gen_by_str():
     dev = Dev()
     v = Temp(dev)
     return v
 
-@fixture(scope='session')
+
+@fixture(scope="session")
 def get_class_gen_by_dynamically():
     yaml_ = """
     interfaces:
@@ -44,5 +45,5 @@ def get_class_gen_by_dynamically():
         """
     to_gen = yaml.safe_load(yaml_)
     dev = Dev()
-    t = TempGen(dev, config=to_gen.get('interfaces'))
+    t = TempGen(dev, config=to_gen.get("interfaces"))
     return t

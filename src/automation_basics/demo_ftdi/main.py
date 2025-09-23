@@ -1,4 +1,3 @@
-
 import sys
 import time
 from enum import Enum
@@ -23,6 +22,7 @@ class PINNames(Enum):
         RI = 7  # PIN_6 | D7
 
     """
+
     TXD = 0  # PIN_1 | D0
     RXD = 1  # PIN_5 | D1
     RTS = 2  # PIN_3 | D2
@@ -60,7 +60,7 @@ class FT232RLDevice:
         """
         bit_position = pin.value
         if value:
-            self.previous_state |= (1 << bit_position)  # Set the bit
+            self.previous_state |= 1 << bit_position  # Set the bit
         else:
             self.previous_state &= ~(1 << bit_position)  # Clear the bit
         try:
@@ -78,7 +78,7 @@ class FT232RLDevice:
         """
         bitmask = 0x00
         for pin in pins:
-            bitmask |= (1 << pin.value)
+            bitmask |= 1 << pin.value
         try:
             self.dev.setBitMode(bitmask, 0x01)  # 0x01 for asynchronous bit-bang mode
             logger.info(f"Pins {[pin.name for pin in pins]} set as OUTPUT.")
@@ -121,6 +121,5 @@ def toggle_rxd_pin():
         device.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     toggle_rxd_pin()
-

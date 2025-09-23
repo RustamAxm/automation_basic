@@ -7,10 +7,10 @@ def test_get_a0(get_api):
     """
     dev = get_api
     vals = dev.get_a0()
-    assert vals.get('header') == 10
-    assert vals.get('cmd') == 0
-    assert vals.get('payload') == 23
-    assert vals.get('err') == 0
+    assert vals.get("header") == 10
+    assert vals.get("cmd") == 0
+    assert vals.get("payload") == 23
+    assert vals.get("err") == 0
 
 
 def test_get_a1(get_api):
