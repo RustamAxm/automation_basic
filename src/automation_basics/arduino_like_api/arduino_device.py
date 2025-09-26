@@ -10,7 +10,7 @@ s_struct = np.dtype(
         ("cmd", np.uint8),
         ("payload", np.uint32),
         ("err", np.uint8),
-    ]
+    ],
 )
 
 

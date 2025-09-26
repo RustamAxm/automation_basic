@@ -11,7 +11,7 @@ class Serializer:
         [
             ("a", np.uint8),
             ("b", np.uint32),
-        ]
+        ],
     )
 
     def __init__(self, a=0, b=0):

@@ -11,7 +11,7 @@ def python_type(val):
         raise ValueError(f"error in convert data {val=}")
 
 
-def struct_to_dict(s_struct: np.array):
+def struct_to_dict(s_struct: np._ArrayT):
     tmp = {}
     for key in s_struct.dtype.fields:
         tmp[key] = python_type(s_struct[key][0])

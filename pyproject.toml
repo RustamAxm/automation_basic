@@ -87,6 +87,8 @@ select = [
     "SIM",
     # isort
     "I",
+    "Q",
+    "COM",
 ]
 ignore = ['UP012']
 
@@ -111,3 +113,23 @@ style = "pep440"
 bump = true
 fallback-version = "0.0.0"
 
+[tool.ty.rules]
+# ignore
+redundant-cast = "ignore"
+invalid-argument-type = "ignore" # TODO to warn
+# warn
+possibly-unbound-attribute = "warn"
+unused-ignore-comment = "warn"
+# error
+missing-argument = "error"
+possibly-unbound-import = "error"
+invalid-return-type = "error"
+
+
+[tool.ty.src]
+include = [
+    "src",
+]
+exclude = [
+    "tests",
+]

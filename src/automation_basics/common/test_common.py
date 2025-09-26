@@ -9,7 +9,7 @@ def test_np():
         [
             ("a", np.uint8),
             ("b", np.uint32),
-        ]
+        ],
     )
     data = np.zeros(1, dtype=t)
     d = struct_to_dict(data)
