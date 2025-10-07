@@ -5,25 +5,25 @@ repos:
       name: json check
       entry: "uv run check-json"
       language: system
-      files: .json
+      files: \.json
 
     - id: check-yaml
       name: yaml check
       entry: "uv run check-yaml"
       language: system
-      files: .yaml
+      files: \.yaml
 
     - id: check-toml
       name: toml check
       entry: "uv run check-toml"
       language: system
-      files: .toml
+      files: \.toml
 
     - id: check-xml
       name: xml check
       entry: "uv run check-xml"
       language: system
-      files: .xml
+      files: \.xml
 
     - id: linter
       name: Linter check
