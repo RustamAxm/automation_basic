@@ -16,6 +16,17 @@ class Template:
     def second(self):
         pass
 
+class Template2:
+    def __init__(self):
+        pass
+
+    def _private(self):
+        pass
+
+    def once_new(self, val1, val2, val3) -> int:
+        print(f"{val1}, {val2}")
+        return 1
+
 class MyClass:
     def __init__(self):
         pass
@@ -32,7 +43,7 @@ def get_method(ret_vals, args_vals):
             print(f"Set added class {args}, {kwargs}")
             return None
         sig = inspect.signature(set_method)
-        sig = sig.replace(parameters=tuple(args_vals))
+        sig = sig.replace(parameters=tuple(args_vals)[1:])
         set_method.__signature__ = sig
         return set_method
     else:
@@ -41,7 +52,7 @@ def get_method(ret_vals, args_vals):
             ret = self.get()
             return ret
         sig = inspect.signature(get_method)
-        sig = sig.replace(parameters=tuple(args_vals))
+        sig = sig.replace(parameters=tuple(args_vals)[1:])
         get_method.__signature__ = sig
         return get_method
 
@@ -56,13 +67,32 @@ def create_methods_from_rhs(cls, rhs):
             setattr(cls, f'dynamic_{name}', method_new)
             print(f"{name=}, {method_=}")
 
+def create_methods_from_rhs_for_instance(obj, rhs):
+    for name, method_ in rhs.__dict__.items():
+        if callable(method_) and not name.startswith("_"):
+            args_vals =  inspect.signature(method_).parameters.values()
+            print(f"{args_vals=}")
+            ret_vals = inspect.signature(method_).return_annotation
+            print(f"{ret_vals}")
+            method_new = get_method(ret_vals, args_vals)
+            setattr(obj, f'dynamic_{name}', method_new.__get__(obj, obj.__class__))
+            print(f"{name=}, {method_=}")
+
 if  __name__ == '__main__':
     create_methods_from_rhs(MyClass, Template)
     dev = MyClass()
     print(dev.dynamic_once(12, val1 = 1))
     print(dev.dynamic_second(13))
     print(MyClass.__dict__.items())
+    print(dev.__class__.__dict__.items())
 
     print("_____________")
     print(inspect.signature(MyClass.dynamic_once).parameters.values())
     print(inspect.signature(MyClass.dynamic_second).parameters.values())
+    print("______________")
+    create_methods_from_rhs_for_instance(dev, Template2)
+    print(dev.__class__.__dict__.items())
+    print(dev.__dict__.items())
+    print(dev.dynamic_once_new(13))
+    print(dev.dynamic_once(12, val1 = 1))
+    print(dev.dynamic_second(13))
