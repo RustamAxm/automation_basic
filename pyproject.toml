@@ -132,4 +132,5 @@ include = [
 ]
 exclude = [
     "tests",
+    "src/automation_basics/gen_methods/gen_methods_main.py",
 ]

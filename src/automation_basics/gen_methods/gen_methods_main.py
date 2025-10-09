@@ -1,6 +1,8 @@
-import inspect
 import ast
 import inspect
+
+from loguru import logger
+
 
 class Template:
     def __init__(self):
@@ -10,11 +12,12 @@ class Template:
         pass
 
     def once(self, val1, val2) -> int:
-        print(f"{val1}, {val2}")
+        logger.debug(f"{val1}, {val2}")
         return 1
 
     def second(self):
         pass
+
 
 class Template2:
     def __init__(self):
@@ -23,9 +26,10 @@ class Template2:
     def _private(self):
         pass
 
-    def once_new(self, val1, val2, val3) -> int:
-        print(f"{val1}, {val2}")
+    def once_new(self, val1: int, val2: float, val3: str) -> int:
+        logger.debug(f"{val1}, {val2}")
         return 1
+
 
 class MyClass:
     def __init__(self):
@@ -34,65 +38,79 @@ class MyClass:
     def get(self):
         return 12
 
+
 def contains_explicit_return(f):
     return any(isinstance(node, ast.Return) for node in ast.walk(ast.parse(inspect.getsource(f))))
 
+
 def get_method(ret_vals, args_vals):
     if ret_vals is inspect._empty:
+
         def set_method(self, *args, **kwargs):
-            print(f"Set added class {args}, {kwargs}")
+            logger.debug(f"Set added class {args}, {kwargs}")
             return None
+
         sig = inspect.signature(set_method)
         sig = sig.replace(parameters=tuple(args_vals)[1:])
         set_method.__signature__ = sig
         return set_method
     else:
+
         def get_method(self, *args, **kwargs):
-            print(f"Get added class {args}, {kwargs}")
+            logger.debug(f"Get added class {args}, {kwargs}")
             ret = self.get()
             return ret
+
         sig = inspect.signature(get_method)
         sig = sig.replace(parameters=tuple(args_vals)[1:])
         get_method.__signature__ = sig
         return get_method
 
+
 def create_methods_from_rhs(cls, rhs):
     for name, method_ in rhs.__dict__.items():
         if callable(method_) and not name.startswith("_"):
-            args_vals =  inspect.signature(method_).parameters.values()
-            print(f"{args_vals=}")
+            args_vals = inspect.signature(method_).parameters.values()
+            logger.trace(f"{args_vals=}")
             ret_vals = inspect.signature(method_).return_annotation
-            print(f"{ret_vals}")
+            logger.trace(f"{ret_vals}")
             method_new = get_method(ret_vals, args_vals)
-            setattr(cls, f'dynamic_{name}', method_new)
-            print(f"{name=}, {method_=}")
+            method_new.__doc__ = method_.__doc__
+            method_new.__qualname__ = method_.__qualname__
+            setattr(cls, f"{name}", method_new)
+            logger.trace(f"{name=}, {method_=}")
+
 
 def create_methods_from_rhs_for_instance(obj, rhs):
     for name, method_ in rhs.__dict__.items():
         if callable(method_) and not name.startswith("_"):
-            args_vals =  inspect.signature(method_).parameters.values()
-            print(f"{args_vals=}")
+            args_vals = inspect.signature(method_).parameters.values()
+            logger.trace(f"{args_vals=}")
             ret_vals = inspect.signature(method_).return_annotation
-            print(f"{ret_vals}")
+            logger.trace(f"{ret_vals}")
             method_new = get_method(ret_vals, args_vals)
-            setattr(obj, f'dynamic_{name}', method_new.__get__(obj, obj.__class__))
-            print(f"{name=}, {method_=}")
+            method_new.__doc__ = method_.__doc__
+            method_new.__qualname__ = method_.__qualname__
+            setattr(obj, f"{name}", method_new.__get__(obj, obj.__class__))
+            logger.debug(f"{name=}, {method_=}")
 
-if  __name__ == '__main__':
+
+if __name__ == "__main__":
     create_methods_from_rhs(MyClass, Template)
     dev = MyClass()
-    print(dev.dynamic_once(12, val1 = 1))
-    print(dev.dynamic_second(13))
-    print(MyClass.__dict__.items())
-    print(dev.__class__.__dict__.items())
+    logger.debug(dev.once(12, val1=1))
+    logger.debug(dev.second(13))
+    logger.debug(MyClass.__dict__.items())
+    logger.debug(dev.__class__.__dict__.items())
 
-    print("_____________")
-    print(inspect.signature(MyClass.dynamic_once).parameters.values())
-    print(inspect.signature(MyClass.dynamic_second).parameters.values())
-    print("______________")
+    logger.debug("_____________")
+    logger.debug(inspect.signature(MyClass.once).parameters.values())
+    logger.debug(type(list(inspect.signature(MyClass.once).parameters.values())[0]))
+    logger.debug(inspect.signature(MyClass.second).parameters.values())
+    logger.debug("______________")
     create_methods_from_rhs_for_instance(dev, Template2)
-    print(dev.__class__.__dict__.items())
-    print(dev.__dict__.items())
-    print(dev.dynamic_once_new(13))
-    print(dev.dynamic_once(12, val1 = 1))
-    print(dev.dynamic_second(13))
+    logger.debug(dev.__class__.__dict__.items())
+    logger.debug(dev.__dict__.items())
+    logger.debug(dev.once_new(13))
+    logger.debug(dev.once(12, val1=1))
+    logger.debug(dev.second(13))
