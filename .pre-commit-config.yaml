@@ -44,3 +44,11 @@ repos:
       language: system
       types: [ python ]
       pass_filenames: false
+
+    - id: unit-test
+      name: Unit tests
+      entry: "uv run poe pre-push-units"
+      language: system
+      types: [ python ]
+      pass_filenames: false
+      stages: [ pre-push ]

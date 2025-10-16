@@ -32,6 +32,7 @@ dev = [
     "pytest-sugar>=1.0.0",
     "gitpython>=3.1.45",
     "standard-distutils>=3.11.9",
+    "pytest-xdist>=3.8.0",
 ]
 
 [tool.poe.env]
@@ -51,9 +52,11 @@ api-rst.shell = """rm -fr docs/source/api &&
 all-docs = ["api-rst", "html", "pdf", "md"]
 
 test-demo.shell = """pytest -vs --cov=src --junitxml=test-results/$(date '+%F_s%s').xml \
-                     src """
+                     src/automation_basics/test_demo """
+
+pre-push-units = "pytest -vs -n 6 --cov=src  src/automation_basics/test_demo "
 create-com.shell = "socat -d -d pty,raw,echo=0,link=/tmp/ttyV0 pty,raw,echo=0,link=/tmp/ttyV1"
-pre-commit.shell = "pre-commit install"
+install-pre-hooks.shell = "pre-commit install && pre-commit install --hook-type pre-push"
 
 [project.scripts]
 simple = "automation_basics.simple_functions.main:main"

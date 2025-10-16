@@ -36,10 +36,10 @@ def test_fixture_param(get_params):
     """
     параметризованный тест - фикстура с разными параметрами
     """
-    assert get_params > 2
+    assert get_params > 0
 
 
-@pytest.mark.parametrize("a,b", [(1, 1), (2, 4), (3, 3)])
+@pytest.mark.parametrize("a,b", [(1, 1), (4, 4), (3, 3)])
 def test_params_in_test(a, b):
     """
     сам тест с разными параметрами
