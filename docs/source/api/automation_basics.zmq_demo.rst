@@ -17,6 +17,22 @@ automation\_basics.zmq\_demo.client module
    :show-inheritance:
    :undoc-members:
 
+automation\_basics.zmq\_demo.demo\_pub module
+---------------------------------------------
+
+.. automodule:: automation_basics.zmq_demo.demo_pub
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+automation\_basics.zmq\_demo.demo\_sub module
+---------------------------------------------
+
+.. automodule:: automation_basics.zmq_demo.demo_sub
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 automation\_basics.zmq\_demo.server module
 ------------------------------------------
 

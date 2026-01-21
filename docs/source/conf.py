@@ -83,4 +83,4 @@ html_context = {
     "languages": [["en", "link to en"], ["de", "link to de"]],
 }
 
-autodoc_mock_imports = ["smbus3", "smbus2", "serial", "RPi", "ftd2xx"]
+autodoc_mock_imports = ["smbus3", "smbus2", "serial", "RPi", "ftd2xx", "zmq", "threading"]
