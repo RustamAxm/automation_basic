@@ -1,0 +1,16 @@
+device_cmds:
+  - name: "demo_cmd"
+    cmd_code: 0
+    type: uint32
+    size: 4
+    info: "demo cmd 1"
+  - name: "demo_cmd_2"
+    cmd_code: 1
+    type: int32
+    size: 4
+    info: "demo cmd 2"
+  - name: "demo_cmd_3"
+    cmd_code: 2
+    type: float32
+    size: 4
+    info: "demo cmd 3"

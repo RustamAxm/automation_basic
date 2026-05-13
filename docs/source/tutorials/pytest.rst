@@ -56,6 +56,32 @@ Pytest
 
 `Контроль ошибок и предупреждений <https://docs.pytest.org/en/stable/how-to/capture-warnings.html>`_
 
+Генерация тестов в рантайме из конфига
+----------------------------------------------
+
+.. code-block::
+
+    $ pytest  src/automation_basics/test_gen_from_config --config src/automation_basics/test_gen_from_config/config.yaml
+    Test session starts (platform: linux, Python 3.12.10, pytest 8.4.2, pytest-sugar 1.1.1)
+    cachedir: .pytest_cache
+    rootdir: /home/rustam/python-progs/automation_basic
+    configfile: pyproject.toml
+    plugins: xdist-3.8.0, mock-3.15.1, sugar-1.1.1, cov-7.0.0
+    collected 3 items
+    2026-05-13 12:22:12.507 | INFO     | automation_basics.test_gen_from_config.conftest:tmp_:19 - demo_cmd
+
+     src/automation_basics/test_gen_from_config/test_fct_smoke.py::TestFCTSmoke.test_action[get_demo_cmd] ✓                                                                                                      33% ███▍      2026-05-13 12:22:12.509 | INFO     | automation_basics.test_gen_from_config.conftest:tmp_:19 - demo_cmd_2
+
+     src/automation_basics/test_gen_from_config/test_fct_smoke.py::TestFCTSmoke.test_action[get_demo_cmd_2] ✓                                                                                                    67% ██████▋   2026-05-13 12:22:12.510 | INFO     | automation_basics.test_gen_from_config.conftest:tmp_:19 - demo_cmd_3
+
+    CLOSE
+     src/automation_basics/test_gen_from_config/test_fct_smoke.py::TestFCTSmoke.test_action[get_demo_cmd_3] ✓                                                                                                   100% ██████████
+
+    Results (0.03s):
+           3 passed
+
+
+
 Проекты с unit тестами на gtest
 ---------------------------------
 Для c/cpp юнит тестов есть пару примеров для систем сборок
